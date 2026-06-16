@@ -1,259 +1,176 @@
-# OpenCode CLI Developer Guide — Knowledge Assessment Quiz
+# 💬 Chat App
 
-**Document:** Developer_Guide_OpenCode_CLI_v5.docx  
-**Date:** {{DATE}}  
-**Candidate Name:** _________________________________  
-**Team Lead:** _________________________________  
-**Time Allowed:** 45 minutes  
-**Total Points:** 120 points (MCQ: 80 pts | Essay: 40 pts)
+A simple browser-based chat application built using **HTML, CSS, and JavaScript**. This application enables real-time communication between browser tabs using the **BroadcastChannel API** and stores messages locally using **IndexedDB**, requiring no backend server.
 
----
+## 🚀 Features
 
-## Section A — Multiple Choice Questions (10 questions × 8 pts each = 80 pts)
-
-**Instructions:** Circle the correct answer for each question.
-
----
-
-### Question 1
-What is the primary purpose of the **AGENTS.md** file in an OpenCode CLI project?
-
-A. It stores user authentication credentials for the CLI tool.  
-B. It is a project configuration file automatically loaded by OpenCode CLI that defines tech stack, conventions, and constraints.  
-C. It contains the compiled build output of the project.  
-D. It is a log file for recording all AI-generated code changes.
+- User login with custom username
+- Real-time messaging between browser tabs
+- Local message storage using IndexedDB
+- Persistent chat history after page refresh
+- Modern and responsive user interface
+- Message timestamps
+- Change user functionality
+- No external libraries or frameworks required
+- Secure message rendering to prevent HTML injection
 
 ---
 
-### Question 2
-Which of the following best describes the **Flat-Pack Approach**?
+## 🛠️ Technologies Used
 
-A. A method for packaging Node.js applications into a single executable file.  
-B. A UI design pattern where all components are rendered on a single flat page.  
-C. Decomposing the entire project into the smallest possible self-contained units before any code is generated or modified.  
-D. A database normalization technique for reducing table redundancy.
-
----
-
-### Question 3
-According to the **Greek Sculptor approach**, what should the first prompt to OpenCode CLI contain?
-
-A. Detailed component names, prop names, and exact function call order.  
-B. Full file structure and naming conventions for every module.  
-C. The outcome and intent (goal and constraints only), letting OpenCode CLI choose the shape.  
-D. A step-by-step implementation guide with pseudocode for every function.
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- IndexedDB
+- BroadcastChannel API
+- LocalStorage
 
 ---
 
-### Question 4
-The **Strangler Fig Strategy** mandates that:
+## 📋 How It Works
 
-A. All legacy code must be refactored in a single sprint.  
-B. New pages and major changes to existing legacy pages must be built using the approved flat-pack tech stack, not the legacy stack.  
-C. Legacy databases should be replaced with NoSQL alternatives immediately.  
-D. Developers should avoid touching any legacy code until a full system rewrite is approved.
+### User Login
+- Users enter a username before joining the chat.
+- Username is saved in LocalStorage.
+- Returning users are automatically logged in.
 
----
+### Message Storage
+- Messages are stored locally in IndexedDB.
+- Chat history persists even after refreshing the page.
+- Messages are loaded in chronological order.
 
-### Question 5
-What is the recommended **check-in cadence** for developers working with the consulting lead?
-
-A. Daily stand-up meetings only.  
-B. Hourly updates via Slack.  
-C. Structured updates every 3 hours during active development days.  
-D. Weekly summary emails every Friday afternoon.
+### Real-Time Communication
+- BroadcastChannel API allows instant communication between browser tabs.
+- No server or internet connection is required.
 
 ---
 
-### Question 6
-Which of the following is **NOT** part of the **four mandatory developer gates**?
+## 📂 Project Structure
 
-A. Instruct — the developer writes the prompt.  
-B. Automate — the developer sets up CI/CD pipelines for every task.  
-C. Review — every line of AI-generated code is read and understood by the developer.  
-D. Publish — only the developer triggers deployment or release.
-
----
-
-### Question 7
-In the **COSMIC document workflow**, what is the correct order of steps?
-
-A. Prototype → Build → Align → Set up  
-B. Align → Prototype → Set up → Build  
-C. Prototype → Align → Set up → Initialise → Build  
-D. Set up → Prototype → Build → Align
-
----
-
-### Question 8
-According to the **Prompt Template** recommended in the guide, which of the following sections should **NOT** be included?
-
-A. Context — describing the feature, module, or bug.  
-B. Cost Estimate — calculating the dollar cost of running the AI prompt.  
-C. Constraints — files, functions, or APIs that must not be changed.  
-D. Expected Output — files to create or modify, function signatures, return types.
+```text
+chat-app/
+│
+├── index.html
+├── README.md
+│
+├── HTML Structure
+├── CSS Styling
+└── JavaScript Logic
+    ├── User Authentication
+    ├── IndexedDB Storage
+    ├── BroadcastChannel Messaging
+    ├── Message Rendering
+    └── Event Handling
+```
 
 ---
 
-### Question 9
-What is the **Alpine.js Flat-Pack Rule**?
+## ⚙️ Installation
 
-A. Each Alpine.js component must be wrapped in a React wrapper for compatibility.  
-B. Each Alpine.js component is a single, self-contained `x-data` block; components must not share state globally.  
-C. Alpine.js components should always store state in `localStorage` for persistence.  
-D. All Alpine.js components must be written in a single file called `alpine-flat-pack.js`.
+1. Clone the repository:
 
----
+```bash
+git clone https://github.com/your-username/chat-app.git
+```
 
-### Question 10
-Which storage method is **explicitly forbidden** for JWT tokens according to the authentication standards?
+2. Navigate to the project directory:
 
-A. httpOnly cookies.  
-B. In-memory state.  
-C. localStorage.  
-D. Secure, encrypted session storage managed by the backend.
+```bash
+cd chat-app
+```
 
----
+3. Open `index.html` in your browser.
 
-## Section B — Essay Questions (2 questions × 20 pts each = 40 pts)
-
-**Instructions:** Answer each question in 150–300 words. Be specific and reference concepts from the guide where possible.
+No build tools or dependencies are required.
 
 ---
 
-### Essay Question 1 (20 pts)
+## 🎯 Usage
 
-**Explain the "Think → Plan → Build" workflow and why it is critical for complex tasks. Describe how a developer should apply the two-step reasoning approach when debugging a performance issue, using a specific example from the guide's Appendix A.**
-
-**_____________________________________________________________________________**
-
-**_____________________________________________________________________________**
-
-**_____________________________________________________________________________**
-
-**_____________________________________________________________________________**
-
-**_____________________________________________________________________________**
-
-**_____________________________________________________________________________**
-
-**_____________________________________________________________________________**
-
-**_____________________________________________________________________________**
+1. Open the application in your browser.
+2. Enter a username and click **Join**.
+3. Open the same page in another tab.
+4. Enter a different username.
+5. Start chatting in real time.
 
 ---
 
-### Essay Question 2 (20 pts)
+## 📊 Message Object Structure
 
-**Describe the role of STYLE.md in a project and how it interacts with AGENTS.md and OpenCode CLI. Include at least three specific design standards (e.g., spacing, colour tokens, or interaction rules) and explain why enforcing these through STYLE.md produces better UI output than ad-hoc prompting.**
-
-**_____________________________________________________________________________**
-
-**_____________________________________________________________________________**
-
-**_____________________________________________________________________________**
-
-**_____________________________________________________________________________**
-
-**_____________________________________________________________________________**
-
-**_____________________________________________________________________________**
-
-**_____________________________________________________________________________**
-
-**_____________________________________________________________________________**
+```javascript
+{
+  id: "unique-id",
+  sender: "John",
+  text: "Hello World!",
+  timestamp: 1710000000000
+}
+```
 
 ---
 
-## Answer Key — For Assessor Use Only
+## 🔒 Security
 
-| Q# | Correct Answer |
-|----|----------------|
-| 1  | B |
-| 2  | C |
-| 3  | C |
-| 4  | B |
-| 5  | C |
-| 6  | B |
-| 7  | C |
-| 8  | B |
-| 9  | B |
-| 10 | C |
+The application sanitizes all user input before displaying messages.
 
-**Essay Rubric (per question):**
-- **18–20 pts:** Excellent understanding; specific references to guide; clear, structured reasoning.
-- **14–17 pts:** Good understanding; some references; minor gaps in explanation.
-- **10–13 pts:** Basic understanding; vague or generic answer; few specific references.
-- **5–9 pts:** Limited understanding; significant misinterpretations of the guide.
-- **0–4 pts:** Little to no relevant content; off-topic or unanswered.
+```javascript
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+```
+
+This helps prevent Cross-Site Scripting (XSS) attacks.
 
 ---
 
-## Score Summary Sheet
+## 🌐 Browser Support
 
-| Section | Max Points | Points Earned | Percentage |
-|---------|------------|---------------|------------|
-| Multiple Choice (10 × 8 pts) | 80 | _________ | _________ % |
-| Essay 1 | 20 | _________ | _________ % |
-| Essay 2 | 20 | _________ | _________ % |
-| **TOTAL** | **120** | **_________** | **_________ %** |
+Supported browsers:
 
----
+- Google Chrome
+- Microsoft Edge
+- Mozilla Firefox
+- Opera
 
-## Final Assessment Report for Team Lead
+Required browser features:
 
-**To:** Team Lead  
-**From:** _________________________________ (Assessor)  
-**Re:** Knowledge Assessment — OpenCode CLI Developer Guide v5  
-**Date:** {{DATE}}
-
-### Candidate Information
-- **Name:** _________________________________
-- **Assessment Date:** _________________________________
-- **Document Version:** Developer_Guide_OpenCode_CLI_v5.docx
-
-### Overall Score
-
-| Metric | Result |
-|--------|--------|
-| Total Points Earned | _________ / 120 |
-| Overall Percentage | _________ % |
-| Grade | _________ |
-
-### Grading Scale
-- **A (90–100%):** Exceptional mastery of the guide. Ready to lead OpenCode CLI workflows independently.
-- **B (80–89%):** Strong understanding. Minor gaps; ready to work with light supervision.
-- **C (70–79%):** Adequate understanding. Review recommended in weaker areas before independent work.
-- **D (60–69%):** Below expectations. Requires structured re-study and reassessment.
-- **F (< 60%):** Does not meet minimum competency. Mandatory retraining required.
-
-### Section Breakdown
-
-| Section | Score | Notes |
-|---------|-------|-------|
-| MCQ Section | _________ / 80 | |
-| Essay 1 — Think→Plan→Build | _________ / 20 | |
-| Essay 2 — STYLE.md & Design Standards | _________ / 20 | |
-
-### Assessor Comments
-
-_____________________________________________________________________________
-
-_____________________________________________________________________________
-
-_____________________________________________________________________________
-
-### Recommendation
-
-☐ **Pass** — Candidate demonstrates sufficient knowledge to proceed with OpenCode CLI development tasks.  
-☐ **Pass with Review** — Candidate passes but should revisit specific topics: _________________________________  
-☐ **Reassessment Required** — Candidate should re-study the guide and retake this assessment within ____ days.
+- IndexedDB
+- BroadcastChannel API
+- LocalStorage
 
 ---
 
-**Assessor Signature:** _________________________________  
-**Date:** _________________________________
+## ⚠️ Limitations
+
+- Works only between tabs/windows of the same browser and origin.
+- No backend server.
+- No user authentication system.
+- No online status indicator.
+- No file sharing.
+- Chat history is stored only on the local device.
 
 ---
 
-*This report was generated from the Developer_Guide_OpenCode_CLI_v5.docx knowledge assessment. All scores and recommendations are based on the official guide content.*
+## 🔮 Future Enhancements
+
+- Dark mode
+- Emoji support
+- Private messaging
+- Online user list
+- Message editing and deletion
+- File and image sharing
+- WebSocket backend integration
+- User accounts and authentication
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+Developed as a lightweight chat application demonstrating the use of IndexedDB and BroadcastChannel APIs in modern web browsers.
